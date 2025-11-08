@@ -13,8 +13,9 @@ The design features:
 - Glitching text animation for “PLUTO WEALTH CYBER ORG”.
 - A “COMING SOON” footer banner with pulsing line animation.
 - Randomly generated binary code and floating neon particles rendered via JavaScript.
+  
+url: https://plutowealthweb.onrender.com
 
----
 
 🧩 Tech Stack
 
