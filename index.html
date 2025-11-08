@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pluto Wealth Org - Cyber Team Logo</title>
+    <div class="coming-soon">
+        <span class="coming-text">COMING</span>
+        <span class="soon-text">SOON</span>
+        <div class="coming-line"></div>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&display=swap');
+        
+        body {
+            background-color: #0a0a12;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .logo-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            perspective: 1000px;
+        }
+        
+        .logo {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hexagon {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(138, 43, 226, 0.1) 100%);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            border: 2px solid #00ffff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5),
+                        inset 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+        
+        .hexagon-inner {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: linear-gradient(135deg, rgba(0, 0, 20, 0.9) 0%, rgba(10, 0, 30, 0.9) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .pluto {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #00ffff;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            position: relative;
+            animation: glitch 2s linear infinite;
+        }
+        
+        .wealth {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #8a2be2;
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
+            margin-bottom: 0.3rem;
+            letter-spacing: 1px;
+        }
+        
+        .org {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 0.5rem;
+        }
+        
+        .tech-circle {
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            border: 1px dashed rgba(0, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: spin 20s linear infinite;
+        }
+        
+        .tech-circle:nth-child(2) {
+            width: 140%;
+            height: 140%;
+            animation-direction: reverse;
+            animation-duration: 25s;
+        }
+        
+        .tech-circle:nth-child(3) {
+            width: 160%;
+            height: 160%;
+            animation-duration: 30s;
+        }
+        
+        .binary-code {
+            position: absolute;
+            color: rgba(0, 255, 255, 0.2);
+            font-size: 0.8rem;
+            font-family: monospace;
+            white-space: nowrap;
+        }
+        
+        .corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #00ffff;
+        }
+        
+        .corner-tl {
+            top: 15px;
+            left: 15px;
+            border-right: none;
+            border-bottom: none;
+        }
+        
+        .corner-tr {
+            top: 15px;
+            right: 15px;
+            border-left: none;
+            border-bottom: none;
+        }
+        
+        .corner-bl {
+            bottom: 15px;
+            left: 15px;
+            border-right: none;
+            border-top: none;
+        }
+        
+        .corner-br {
+            bottom: 15px;
+            right: 15px;
+            border-left: none;
+            border-top: none;
+        }
+        
+        .scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to bottom, 
+                transparent 0%, 
+                rgba(0, 255, 255, 0.5) 50%, 
+                transparent 100%);
+            animation: scan 4s linear infinite;
+            opacity: 0.7;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotateX(5deg) rotateY(5deg); }
+            50% { transform: translateY(-20px) rotateX(-5deg) rotateY(-5deg); }
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes scan {
+            0% { top: 0%; }
+            100% { top: 100%; }
+        }
+        
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+        
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: rgba(0, 255, 255, 0.7);
+            border-radius: 50%;
+            animation: particle-float linear infinite;
+        }
+        
+        .coming-soon {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            margin-top: 2rem;
+            z-index: 10;
+        }
+        
+        .coming-text, .soon-text {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 1.5rem;
+            display: inline-block;
+            margin: 0 10px;
+        }
+        
+        .coming-text {
+            color: #00ffff;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+        }
+        
+        .soon-text {
+            color: #8a2be2;
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
+            animation: glitch 1.5s linear infinite;
+        }
+        
+        .coming-line {
+            height: 2px;
+            width: 0;
+            background: linear-gradient(to right, 
+                transparent 0%, 
+                #00ffff 50%, 
+                #8a2be2 100%);
+            margin: 10px auto 0;
+            animation: line-grow 3s ease-out infinite;
+        }
+        
+        @keyframes line-grow {
+            0% { width: 0; opacity: 0; }
+            50% { width: 200px; opacity: 1; }
+            100% { width: 0; opacity: 0; }
+        }
+
+        @keyframes particle-float {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="particles" id="particles"></div>
+        
+        <div class="logo">
+            <div class="hexagon">
+                <div class="hexagon-inner">
+                    <div class="corner corner-tl"></div>
+                    <div class="corner corner-tr"></div>
+                    <div class="corner corner-bl"></div>
+                    <div class="corner corner-br"></div>
+                    
+                    <div class="pluto">PLUTO</div>
+                    <div class="wealth">WEALTH</div>
+                    <div class="org">CYBER ORG</div>
+                    
+                    <div class="tech-circle"></div>
+                    <div class="tech-circle"></div>
+                    <div class="tech-circle"></div>
+                    
+                    <div class="scan-line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create binary code elements
+        const hexagonInner = document.querySelector('.hexagon-inner');
+        for (let i = 0; i < 20; i++) {
+            const binary = document.createElement('div');
+            binary.className = 'binary-code';
+            binary.style.top = `${Math.random() * 80 + 10}%`;
+            binary.style.left = `${Math.random() * 80 + 10}%`;
+            binary.textContent = generateBinaryString(10);
+            hexagonInner.appendChild(binary);
+        }
+        
+        function generateBinaryString(length) {
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += Math.random() > 0.5 ? '1' : '0';
+            }
+            return result;
+        }
+        
+        // Create particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.animationDuration = `${Math.random() * 10 + 5}s`;
+            particle.style.animationDelay = `${Math.random() * 5}s`;
+            particlesContainer.appendChild(particle);
+        }
+        
+        // Add occasional glitch effect to the whole logo
+        setInterval(() => {
+            if (Math.random() > 0.7) {
+                document.querySelector('.logo').classList.add('glitch-effect');
+                setTimeout(() => {
+                    document.querySelector('.logo').classList.remove('glitch-effect');
+                }, 200);
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
